@@ -10,10 +10,10 @@ class TokenService
     const TOKEN_EXPIRING_TIME = 64800;
     const REFRESH_TOKEN_EXPIRING_TIME = 129600;
     const REFRESH_TOKEN_COOKIE_KEY = 'refresh_token';
-    const SESSION_LOGGED = 'logged';
 
     /**
      * @param $user User
+     * @return bool|string
      */
     public function generate($user)
     {

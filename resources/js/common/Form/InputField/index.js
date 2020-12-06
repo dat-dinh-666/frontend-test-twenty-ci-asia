@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 export default function InputField(props) {
     const {name, id, label, isRequired, placeholder, type} = props;
     return (
-        <div>
-            <label htmlFor={id}>{label}</label>
-            <input type={type} id={id} name={name} required={isRequired} placeholder={placeholder}/>
+        <div className="mb-4">
+            <label className="block mb-2 font-semibold" htmlFor={id}>{label}</label>
+            <input className="input w-full" type={type} id={id} name={name} required={isRequired} placeholder={placeholder}/>
         </div>
     )
 }

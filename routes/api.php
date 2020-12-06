@@ -21,4 +21,5 @@ Route::group(['prefix' => 'v1', 'middleware' => 'jwt.auth'], function (){
 Route::group(['prefix' => 'auth', 'middleware' => 'cookie.encrypt'], function (){
     Route::get('validate', 'AuthController@validateToken');
     Route::get('refresh', 'AuthController@refreshToken');
+    Route::post('login', 'AuthController@login');
 });

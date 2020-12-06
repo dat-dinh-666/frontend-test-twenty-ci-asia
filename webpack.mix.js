@@ -19,3 +19,12 @@ mix.sass('resources/sass/app.scss', 'public/css', {}, [
 })
 
 mix.react('resources/js/app.js', 'public/js');
+
+if(process.env.NODE_ENV === 'development') {
+    mix.browserSync({
+        proxy: process.env.APP_URL
+    });
+    mix.sourceMaps();
+}
+
+mix.disableSuccessNotifications();

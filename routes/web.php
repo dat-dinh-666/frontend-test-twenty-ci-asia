@@ -13,6 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/{path?}', 'HomeController@index')->where('path', '[a-zA-Z0-9-/]+')->name('home');

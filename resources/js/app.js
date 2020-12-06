@@ -2,19 +2,35 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from "react-redux";
 import store from "./store/store";
-import Auth from "./auth";
+import Main from "./components/Main";
+import {Slide, ToastContainer} from "react-toastify";
+import bootstrap from "./bootstrap";
 
 function App(){
     return (
         <Provider store={store}>
-            <div>App</div>
+            <ToastContainer
+                position="bottom-right"
+                autoClose={5000}
+                hideProgressBar
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                transition={Slide}
+                limit={3}
+            />
+            <Main/>
         </Provider>
     )
 }
 
-Auth.bootstrap().finally(() => {
+bootstrap().finally(() => {
     if(document.getElementById('root')) {
         ReactDOM.render(<App/>, document.getElementById('root'));
     }
-})
+});
+
 

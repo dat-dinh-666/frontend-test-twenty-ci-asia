@@ -1,4 +1,28 @@
+@import '~react-toastify/dist/ReactToastify.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @tailwind screens;
+
+.btn {
+    @apply rounded inline-block px-4 py-2 leading-tight shadow border text-blue-800 border-blue-800 hover:text-white hover:bg-blue-800 transition;
+}
+
+.btn-primary {
+    @extend .btn;
+    @apply btn text-white bg-blue-800 border-blue-800 hover:text-blue-800 hover:bg-white;
+}
+
+.btn-danger {
+    @extend .btn;
+    @apply btn text-white bg-red-400 border-red-400 hover:text-red-400 hover:bg-white;
+}
+
+.page-title {
+    @apply text-3xl my-3;
+}
+
+.input {
+    @apply bg-gray-100 text-black placeholder-gray-300 rounded p-2;
+}

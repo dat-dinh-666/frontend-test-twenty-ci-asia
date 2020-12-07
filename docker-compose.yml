@@ -17,6 +17,7 @@ services:
     volumes:
        - ./:/var/www/html
        - /var/www/html/node_modules
+       - /var/www/html/vendor
     networks:
       - app-network
 
@@ -26,11 +27,12 @@ services:
     container_name: webserver
     restart: unless-stopped
     tty: true
+    user: root
     volumes:
       - ./:/var/www/html
       - ./.docker/nginx:/etc/nginx/conf.d/
     ports:
-      - "80:80"
+      - "3000:80"
     networks:
       - app-network
 
@@ -38,6 +40,7 @@ services:
   db:
     image: mysql:5.7.22
     container_name: db
+    user: root
     restart: unless-stopped
     tty: true
     ports:

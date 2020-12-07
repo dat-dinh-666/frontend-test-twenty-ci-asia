@@ -1,14 +1,14 @@
-import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
-import {ROUTE_CREATE_POST, ROUTE_HOME, ROUTE_LOGIN, ROUTE_POST, ROUTE_POSTS_LIST} from "../../constants/routes";
-import React from "react";
-import PostsListPage from "../PostsListPage";
-import PrivatePage from "../PrivatePage";
-import LoginPage from "../LoginPage";
-import PostPage from "../PostPage";
-import Header from "../Header";
-import CreatePostPage from "../CreatePostPage";
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
+import { ROUTE_CREATE_POST, ROUTE_HOME, ROUTE_LOGIN, ROUTE_POST, ROUTE_POSTS_LIST } from '../../constants/routes'
+import React from 'react'
+import PostsListPage from '../PostsListPage'
+import PrivatePage from '../PrivatePage'
+import LoginPage from '../LoginPage'
+import PostPage from '../PostPage'
+import Header from '../Header'
+import CreatePostPage from '../CreatePostPage'
 
-export default function Main(props) {
+export default function Main (props) {
     return (
         <div className="container mx-auto px-4">
             <BrowserRouter>

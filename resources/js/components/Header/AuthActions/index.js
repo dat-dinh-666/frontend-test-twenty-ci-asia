@@ -1,18 +1,18 @@
-import useLoggedIn from "../../../hooks/useLoggedIn";
-import {Link, useLocation} from "react-router-dom";
-import AuthService from "../../../services/auth.service";
-import {toast} from "react-toastify";
-import {ROUTE_LOGIN} from "../../../constants/routes";
-import React from "react";
+import useLoggedIn from '../../../hooks/useLoggedIn'
+import { Link } from 'react-router-dom'
+import AuthService from '../../../services/auth.service'
+import { toast } from 'react-toastify'
+import { ROUTE_LOGIN } from '../../../constants/routes'
+import React from 'react'
 
-export default function AuthActions(props){
-    const loggedIn = useLoggedIn();
+export default function AuthActions () {
+    const loggedIn = useLoggedIn()
 
-    function logOut(e){
-        e.preventDefault();
-        AuthService.logout();
-        toast.success('Logout successfully');
-        location.reload();
+    function logOut (e) {
+        e.preventDefault()
+        AuthService.logout()
+        toast.success('Logout successfully')
+        location.reload()
     }
 
     return (

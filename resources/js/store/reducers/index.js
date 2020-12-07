@@ -1,7 +1,7 @@
-import {combineReducers} from "redux";
-import postsReducer, {postsLoadingStatus} from "./posts.reducer";
-import loginStatus from "./loginStatus.reducer";
-import selectedPost, {selectedPostFetchingStatus} from "./selectedPost.reducer";
+import { combineReducers } from 'redux'
+import postsReducer, { postsLoadingStatus } from './posts.reducer'
+import loginStatus from './loginStatus.reducer'
+import selectedPost, { selectedPostFetchingStatus } from './selectedPost.reducer'
 
 const rootReducer = combineReducers({
     posts: postsReducer,
@@ -9,6 +9,6 @@ const rootReducer = combineReducers({
     postsLoadingStatus,
     selectedPost,
     selectedPostFetchingStatus
-});
+})
 
-export default rootReducer;
+export default rootReducer

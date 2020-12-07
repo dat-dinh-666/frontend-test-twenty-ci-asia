@@ -1,4 +1,4 @@
-import { createServer, Model } from "miragejs"
+import { createServer, Model } from 'miragejs'
 
 const postsMock = [
     {
@@ -24,51 +24,51 @@ const postsMock = [
     }
 ]
 
-export default function createMock(){
+export default function createMock () {
     createServer({
         models: {
-            post: Model,
+            post: Model
         },
 
-        routes() {
-            this.passthrough();
-            this.namespace = "api/v1";
-            this.logging = false;
+        routes () {
+            this.passthrough()
+            this.namespace = 'api/v1'
+            this.logging = false
 
-            this.get("/posts");
+            this.get('/posts')
 
-            this.get("/posts/:id", (schema, request) => {
-                let id = request.params.id
+            this.get('/posts/:id', (schema, request) => {
+                const id = request.params.id
 
                 return schema.posts.find(id)
-            }, {timing: Math.round(Math.random() * 1000)})
+            }, { timing: Math.round(Math.random() * 1000) })
 
-            this.post("/posts", (schema, request) => {
-                let attrs = JSON.parse(request.requestBody);
-                const id = schema.posts.all().length + Math.round(Math.random() * 100);
+            this.post('/posts', (schema, request) => {
+                const attrs = JSON.parse(request.requestBody)
+                const id = schema.posts.all().length + Math.round(Math.random() * 100)
                 return schema.posts.create({
                     id,
                     ...attrs
                 })
-            }, {timing: Math.round(Math.random() * 1000)})
+            }, { timing: Math.round(Math.random() * 1000) })
 
             this.patch('/posts/:id', (schema, request) => {
-                let newAttrs = JSON.parse(request.requestBody)
-                let id = request.params.id
-                let post = schema.posts.find(id)
+                const newAttrs = JSON.parse(request.requestBody)
+                const id = request.params.id
+                const post = schema.posts.find(id)
 
                 return post.update(newAttrs)
-            }, {timing: Math.round(Math.random() * 1000)});
+            }, { timing: Math.round(Math.random() * 1000) })
 
             this.delete('/posts/:id', (schema, request) => {
-                let id = request.params.id
-                schema.posts.find(id).destroy();
-            }, {timing: Math.round(Math.random() * 1000)})
+                const id = request.params.id
+                schema.posts.find(id).destroy()
+            }, { timing: Math.round(Math.random() * 1000) })
         },
 
-        seeds(server) {
+        seeds (server) {
             postsMock.forEach(post => {
-                server.create("post", post)
+                server.create('post', post)
             })
         }
     })

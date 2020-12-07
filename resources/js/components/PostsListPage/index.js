@@ -1,18 +1,18 @@
-import React, {useEffect} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {fetchPosts} from "../../store/actions/posts.action";
-import {POSTS_FETCHING, POSTS_LOAD_ERROR, POSTS_LOAD_SUCCESS} from "../../store/constants/posts.constant";
-import PostItem from "./PostItem";
-import CreatePost from "./CreatePost";
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchPosts } from '../../store/actions/posts.action'
+import { POSTS_FETCHING, POSTS_LOAD_ERROR, POSTS_LOAD_SUCCESS } from '../../store/constants/posts.constant'
+import PostItem from './PostItem'
+import CreatePost from './CreatePost'
 
-export default function PostsListPage(){
-    const dispatch = useDispatch();
+export default function PostsListPage () {
+    const dispatch = useDispatch()
     useEffect(() => {
         dispatch(fetchPosts())
-    }, []);
+    }, [])
 
-    const loading = useSelector(state => state.postsLoadingStatus);
-    const posts = useSelector(state => state.posts);
+    const loading = useSelector(state => state.postsLoadingStatus)
+    const posts = useSelector(state => state.posts)
 
     return (
         <>

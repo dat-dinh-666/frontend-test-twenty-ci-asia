@@ -1,22 +1,22 @@
-import {getPosts} from "../../apis/posts.api";
+import { getPosts } from '../../apis/posts.api'
 import {
     POSTS_FETCHING,
     POSTS_LOAD_ERROR,
     POSTS_LOAD_SUCCESS,
     SET_POSTS,
     SET_POSTS_LOADING_STATUS
-} from "../constants/posts.constant";
+} from '../constants/posts.constant'
 
 export const fetchPosts = () => {
     return (dispatch, getState) => {
-        dispatch(setPostsLoadingStatus(POSTS_FETCHING));
+        dispatch(setPostsLoadingStatus(POSTS_FETCHING))
         getPosts().then(response => {
-            const {posts} = response.data;
-            dispatch(setPosts(posts));
-            dispatch(setPostsLoadingStatus(POSTS_LOAD_SUCCESS));
+            const { posts } = response.data
+            dispatch(setPosts(posts))
+            dispatch(setPostsLoadingStatus(POSTS_LOAD_SUCCESS))
         }).catch(err => {
-            console.error(err?.response?.data?.message);
-            dispatch(setPostsLoadingStatus(POSTS_LOAD_ERROR));
+            console.error(err?.response?.data?.message)
+            dispatch(setPostsLoadingStatus(POSTS_LOAD_ERROR))
         })
     }
 }

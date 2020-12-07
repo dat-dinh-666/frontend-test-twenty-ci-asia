@@ -1,11 +1,11 @@
-import LoginForm from './LoginForm'
-import React from 'react'
-import useLoggedIn from '../../hooks/useLoggedIn'
-import { Redirect } from 'react-router'
-import { ROUTE_POSTS_LIST } from '../../constants/routes'
+import LoginForm from "./LoginForm";
+import React from "react";
+import useLoggedIn from "../../hooks/useLoggedIn";
+import { Redirect } from "react-router";
+import { ROUTE_POSTS_LIST } from "../../constants/routes";
 
-export default function LoginPage (props) {
-    const loggedIn = useLoggedIn()
+export default function LoginPage(props) {
+    const loggedIn = useLoggedIn();
 
     // eslint-disable-next-line multiline-ternary
     return loggedIn ? (
@@ -14,5 +14,5 @@ export default function LoginPage (props) {
         <main>
             <LoginForm />
         </main>
-    )
+    );
 }

@@ -1,12 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
-import store from './store/store'
-import Main from './components/Main'
-import { Slide, ToastContainer } from 'react-toastify'
-import bootstrap from './bootstrap'
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import store from "./store/store";
+import Main from "./components/Main";
+import { Slide, ToastContainer } from "react-toastify";
+import bootstrap from "./bootstrap";
 
-function App () {
+function App() {
     return (
         <Provider store={store}>
             <ToastContainer
@@ -22,13 +22,13 @@ function App () {
                 transition={Slide}
                 limit={3}
             />
-            <Main/>
+            <Main />
         </Provider>
-    )
+    );
 }
 
 bootstrap().finally(() => {
-    if (document.getElementById('root')) {
-        ReactDOM.render(<App/>, document.getElementById('root'))
+    if (document.getElementById("root")) {
+        ReactDOM.render(<App />, document.getElementById("root"));
     }
-})
+});

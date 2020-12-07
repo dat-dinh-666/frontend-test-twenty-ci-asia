@@ -1,10 +1,10 @@
-import React from 'react'
-import CreatePostForm from './CreatePostForm'
+import React from "react";
+import CreatePostForm from "./CreatePostForm";
 
-export default function CreatePostPage (props) {
+export default function CreatePostPage(props) {
     return (
         <div>
-            <CreatePostForm/>
+            <CreatePostForm />
         </div>
-    )
+    );
 }

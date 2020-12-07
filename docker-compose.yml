@@ -1,6 +1,5 @@
-version: '3'
+version: "3"
 services:
-
   #PHP Service
   app:
     build:
@@ -15,9 +14,9 @@ services:
     ports:
       - "9000:9000"
     volumes:
-       - ./:/var/www/html
-       - /var/www/html/node_modules
-       - /var/www/html/vendor
+      - ./:/var/www/html
+      - /var/www/html/node_modules
+      - /var/www/html/vendor
     networks:
       - app-network
 
@@ -52,7 +51,7 @@ services:
       MYSQL_USER: root
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
-    volumes: 
+    volumes:
       - ./docker/mysql:/docker-entrypoint-initdb.d
     networks:
       - app-network
